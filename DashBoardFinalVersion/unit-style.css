@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Creato';
+    src: url(FOnts/CreatoDisplay-Regular.otf);
+}
+body {
+    font-family: Creato;
+    background-color: #1e2a4a;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+.unit-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.employee-row {
+    background-color: #648ae57b;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.employee-info {
+    display: flex;
+    align-items: center;
+}
+.employee-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.employee-details {
+    font-family: Creato;
+    display: flex;
+    flex-direction: column;
+}
+.details-button{
+    font-family: Creato;
+    font-weight: bold;
+}
+.employee-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+.employee-role {
+    font-size: 14px;
+    opacity: 0.7;
+    margin: 0;
+}
+.stats-container {
+    display: flex;
+    gap: 10px;
+}
+.stat {
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 80px;
+}
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+.stat-label {
+    font-size: 14px;
+}
+.assenze { background-color: #ff6363cf; }
+.smart { background-color: #36ebdfc9; }
+.ferie { background-color: #ffff56bd; }
+.details-button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+}
+.info-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+}

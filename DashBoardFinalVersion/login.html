@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs\sch_logo.png" type="image/x-icon">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <form id="loginForm" class="login-form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="text" id="nomeCognome" placeholder="Inserisci il tuo nome e cognome" required>
+            </div>
+            <div class="input-group">
+                <select id="ruolo" required>
+                    <option value="">Seleziona il tuo ruolo</option>
+                    <option value="Dipendente">Dipendente</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Amministratore">Amministratore</option>
+                </select>
+            </div>
+            <button type="submit">Entra</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nomeCognome = document.getElementById('nomeCognome').value;
+            const ruolo = document.getElementById('ruolo').value;
+
+            localStorage.setItem('userNomeCognome', nomeCognome);
+            localStorage.setItem('userRuolo', ruolo);
+
+            window.location.href = 'dashboard-html.html';
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    const nameInput = document.getElementById('nomeCognome');
+
+    nameInput.addEventListener('input', function(e) {
+        let words = this.value.split(' ');
+        let formattedWords = words.map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        );
+        this.value = formattedWords.join(' ');
+    });
+});
+    </script>
+</body>
+</html>

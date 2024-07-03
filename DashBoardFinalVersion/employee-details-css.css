@@ -1,0 +1,24 @@
+.employee-header {
+    display: flex;
+    top:70px;
+    margin-bottom: 20px;
+}
+
+.employee-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+#employeeName {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.igN{
+    position: absolute;
+    top: 80px;
+}
+

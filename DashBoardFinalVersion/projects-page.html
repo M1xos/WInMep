@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="icon" href="imgs\sch_logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard-css.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img id="profileImage" src="/api/placeholder/100/100" alt="Profile">
+                        <label id="profileImageAction" for="imageUpload" class="profile-image-action">
+                            <i class="fas fa-camera"></i>
+                        </label>
+                        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="profile-info">
+                        <h3 id="userNomeCognome"></h3>
+                        <p id="userRuolo"></p>
+                    </div>
+                </div>
+            </div>
+
+            <nav>
+                <a href="dashboard-html.html" class="menu-item"><i class="fas fa-th-large"></i> <span>Dashboard</span></a>
+                <a href="Unit.html" class="menu-item"><i class="fas fa-users"></i> <span>Unit</span></a>
+                <a href="agenda-page.html" class="menu-item"><i class="fas fa-calendar-alt"></i> <span>Agenda</span></a>
+                <a href="repository-page.html" class="menu-item"><i class="fas fa-archive"></i> <span>Repository</span></a>
+                <a href="#" class="menu-item"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
+                <a href="help-page.html" class="menu-item"><i class="fas fa-question-circle"></i> <span>Help</span></a>
+            </nav>
+            <button id="toggleSidebar" class="toggle-sidebar"><i class="fas fa-bars"></i></button>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Projects</h1>
+                <p class="Nig">Gestione e monitoraggio dei progetti.</p>
+                <div class="header-controls">
+                    <div id="modeToggle" class="mode-toggle">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <div class="toggle-switch"></div>
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                <p>La sezione Projects è il cuore della gestione dei tuoi progetti. Qui puoi creare, monitorare e gestire tutti i tuoi progetti in corso. Puoi facilmente visualizzare lo stato di avanzamento di ogni progetto. Assegna compiti, stabilisci scadenze, e collabora con il tuo team in tempo reale. La pagina Projects ti offre una visione d'insieme, permettendoti di prendere decisioni informate e di mantenere tutti i progetti sulla giusta rotta.</p>
+            </div>
+        </main>
+    </div>
+    <script src="dashboard-js.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userNomeCognome = localStorage.getItem('userNomeCognome');
+            const userRuolo = localStorage.getItem('userRuolo');
+            
+            if (userNomeCognome && userRuolo) {
+                document.getElementById('userNomeCognome').textContent = userNomeCognome;
+                document.getElementById('userRuolo').textContent = userRuolo;
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
