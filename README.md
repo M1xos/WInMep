@@ -1,6 +1,6 @@
-# Dashboard-simulation
+# WINMEP
 
-Welcome to the Dashboard Simulation! This project was created as part of our PCTO (Percorsi per le Competenze Trasversali e per l'Orientamento) program. It’s designed to mimic a real-world business dashboard, allowing users to visualize and analyze various business metrics, making daily management and monitoring tasks more efficient.
+Welcome to WINMEP! This project was created as part of our PCTO (Percorsi per le Competenze Trasversali e per l'Orientamento) program. It’s designed to mimic a real-world business dashboard, allowing users to visualize and analyze various business metrics, making daily management and monitoring tasks more efficient.
 
 
 - **Mock Up**
