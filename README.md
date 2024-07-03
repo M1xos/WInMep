@@ -4,7 +4,7 @@ Welcome to the Dashboard Simulation! This project was created as part of our PCT
 
 
 - **Mock Up**
-    This is the link to access in [Figma's](https://www.figma.com/design/wgrm4KUl2RcBqfWWY9gO5k/Test-Grafico-Online?node-id=0-1&t=jHSIuJUYMdiKylVm-1) Mock Up page
+    - This is the link to access in [Figma's](https://www.figma.com/design/wgrm4KUl2RcBqfWWY9gO5k/Test-Grafico-Online?node-id=0-1&t=jHSIuJUYMdiKylVm-1) Mock Up page
 ## Features
 
 - **Login Page**
