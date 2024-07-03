@@ -61,11 +61,11 @@ Welcome to WINMEP! This project was created as part of our PCTO (Percorsi per le
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/M1xos/site-simulation.git
+   git clone https://github.com/M1xos/WinMep.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd site-simulation
+   cd WinMep
    ```
 3. Open `login.html` in your web browser to start using the dashboard.
 
@@ -76,11 +76,11 @@ Welcome to WINMEP! This project was created as part of our PCTO (Percorsi per le
 
 ## License
 
-This project is licensed under the [GPL-3.0 licence](https://github.com/M1xos/site-simulation/tree/main?tab=GPL-3.0-1-ov-file#).
+This project is licensed under the [GPL-3.0 licence](https://github.com/M1xos/WinMep/tree/main?tab=GPL-3.0-1-ov-file#).
 
 ## Acknowledgements
 
 Thank you for checking it out, and I hope you find it as useful and educational as I did while creating it!
-Here you can see the preview of the website!: [DashBoard Simulation](https://m1xos.github.io/site-simulation/login.html)
+Here you can see the preview of the website!: [WinMep Site](https://m1xos.github.io/WinMep/login.html)
 
 ---
