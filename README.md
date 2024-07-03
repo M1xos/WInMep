@@ -78,5 +78,6 @@ This project is licensed under the [GPL-3.0 licence](https://github.com/M1xos/si
 ## Acknowledgements
 
 Thank you for checking it out, and I hope you find it as useful and educational as I did while creating it!
+Here you can see the preview of the website!: [DashBoard Simulation](https://m1xos.github.io/site-simulation/login.html)
 
 ---
