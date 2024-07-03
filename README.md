@@ -3,7 +3,7 @@
 Welcome to the Dashboard Simulation! This project was created as part of our PCTO (Percorsi per le Competenze Trasversali e per l'Orientamento) program. It’s designed to mimic a real-world business dashboard, allowing users to visualize and analyze various business metrics, making daily management and monitoring tasks more efficient.
 
 
--**Mock Up**
+- **Mock Up**
     This is the link to access in [Figma's](https://www.figma.com/design/wgrm4KUl2RcBqfWWY9gO5k/Test-Grafico-Online?node-id=0-1&t=jHSIuJUYMdiKylVm-1) Mock Up page
 ## Features
 
