@@ -1,4 +1,5 @@
 # WINMEP
+![image](https://github.com/M1xos/WinMep/assets/137094858/3a3ef606-625f-4450-9bf8-d3c1c16c094c)
 
 Welcome to WINMEP! This project was created as part of our PCTO (Percorsi per le Competenze Trasversali e per l'Orientamento) program. It’s designed to mimic a real-world business dashboard, allowing users to visualize and analyze various business metrics, making daily management and monitoring tasks more efficient.
 
