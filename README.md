@@ -58,11 +58,11 @@ Welcome to the Business Dashboard Simulation! This project was created as part o
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/M1xos/BusinessDashboardSimulation.git
+   git clone https://github.com/M1xos/site-simulation.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd BusinessDashboardSimulation
+   cd site-simulation
    ```
 3. Open `login.html` in your web browser to start using the dashboard.
 
