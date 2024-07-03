@@ -58,7 +58,7 @@ Welcome to WINMEP! This project was created as part of our PCTO (Percorsi per le
   - Sample profile pictures for demonstration purposes.
   - Located in the `fpfs` directory, with categories like `BadPfp`, `BestPfp`, and `GoodPfp`.
 
-![image](https://github.com/M1xos/WinMep/assets/137094858/a47ba264-9209-459e-a3bb-bb8d408ec4fa)
+![image](https://github.com/M1xos/WinMep/assets/137094858/2eb26d1b-ef2c-4d0c-a714-a8ea90b15cc7)
 
 
 ## Installation
