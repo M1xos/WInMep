@@ -1,6 +1,6 @@
-# Business Dashboard Simulation
+# Dashboard-simulation
 
-Welcome to the Business Dashboard Simulation! This project was created as part of our PCTO (Percorsi per le Competenze Trasversali e per l'Orientamento) program. It’s designed to mimic a real-world business dashboard, allowing users to visualize and analyze various business metrics, making daily management and monitoring tasks more efficient.
+Welcome to the Dashboard Simulation! This project was created as part of our PCTO (Percorsi per le Competenze Trasversali e per l'Orientamento) program. It’s designed to mimic a real-world business dashboard, allowing users to visualize and analyze various business metrics, making daily management and monitoring tasks more efficient.
 
 ## Features
 
@@ -29,7 +29,7 @@ Welcome to the Business Dashboard Simulation! This project was created as part o
   - File: `repository-page.html`
 
 - **Help Page**
-  - Get support and guidance on using the dashboard.
+  - Get support and guidance on using the .
   - File: `help-page.html`
 
 - **Unit Management**
@@ -39,7 +39,7 @@ Welcome to the Business Dashboard Simulation! This project was created as part o
 ## Assets
 
 - **Background Image**
-  - Adds a custom touch to the dashboard.
+  - Adds a custom touch to the .
   - File: `baCKGROUND.png`
 
 - **Company Logo**
