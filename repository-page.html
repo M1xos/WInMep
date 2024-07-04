@@ -7,6 +7,10 @@
     <link rel="icon" href="imgs\sch_logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard-css.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.16/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 <body class="dark-mode">
     <div class="container">
@@ -22,7 +26,7 @@
                     </div>
                     <div class="profile-info">
                         <h3 id="userNomeCognome"></h3>
-                        <p id="userRuolo"></p>
+                        <p id="userRuolo" data-i18n="userRuolo1" data-i18n="userRuolo2"></p>
                     </div>
                 </div>
             </div>
@@ -35,12 +39,13 @@
                 <a href="projects-page.html" class="menu-item"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
                 <a href="help-page.html" class="menu-item"><i class="fas fa-question-circle"></i> <span>Help</span></a>
             </nav>
+            <a class="len" id="languageToggle">EN/IT</a>
             <button id="toggleSidebar" class="toggle-sidebar"><i class="fas fa-bars"></i></button>
         </aside>
         <main class="main-content">
             <header class="header">
                 <h1>Repository</h1>
-                <p class="Nig">Archivio centrale per documenti e risorse.</p>
+                <p data-i18n="Nig"class="Nig">Archivio centrale per documenti e risorse.</p>
                 <div class="header-controls">
                     <div id="modeToggle" class="mode-toggle">
                         <i class="fas fa-sun"></i>
@@ -50,7 +55,7 @@
                 </div>
             </header>
             <div class="content">
-                <p>Il Repository è il tuo archivio digitale centralizzato. Qui puoi caricare, organizzare e accedere a tutti i documenti e le risorse importanti per il tuo lavoro. Che si tratti di file di progetto, documenti aziendali, o materiali di riferimento, il Repository ti offre un modo sicuro e efficiente per gestire e condividere le informazioni. Utilizza le funzioni di ricerca e categorizzazione per trovare rapidamente ciò di cui hai bisogno, e approfitta delle opzioni di controllo delle versioni per mantenere sempre aggiornati i tuoi file.</p>
+                <p data-i18n="wie">Il Repository è il tuo archivio digitale centralizzato. Qui puoi caricare, organizzare e accedere a tutti i documenti e le risorse importanti per il tuo lavoro. Che si tratti di file di progetto, documenti aziendali, o materiali di riferimento, il Repository ti offre un modo sicuro e efficiente per gestire e condividere le informazioni. Utilizza le funzioni di ricerca e categorizzazione per trovare rapidamente ciò di cui hai bisogno, e approfitta delle opzioni di controllo delle versioni per mantenere sempre aggiornati i tuoi file.</p>
             </div>
         </main>
     </div>
@@ -66,6 +71,58 @@
             } else {
                 window.location.href = 'login.html';
             }
+        });
+              // Inizializzazione di i18next
+              i18next
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+            debug: true,
+            fallbackLng: 'it',
+            resources: {
+            it: {
+                translation: {
+                userRuolo1: 'Dipendente',
+                userRuolo2: 'Amministratore',
+                Nig: 'Archivio centrale per documenti e risorse.',
+                wie: 'La Repository è il tuo archivio digitale centralizzato. Qui puoi caricare, organizzare e accedere a tutti i documenti e le risorse importanti per il tuo lavoro. Che si tratti di file di progetto, documenti aziendali, o materiali di riferimento, il Repository ti offre un modo sicuro e efficiente per gestire e condividere le informazioni. Utilizza le funzioni di ricerca e categorizzazione per trovare rapidamente ciò di cui hai bisogno, e approfitta delle opzioni di controllo delle versioni per mantenere sempre aggiornati i tuoi file.',
+                selectRole: 'Seleziona il tuo ruolo',
+                employee: 'Dipendente',
+                manager: 'Manager',
+                administrator: 'Amministratore',
+                enter: 'Entra'
+                }
+            },
+            en: {
+                translation: {
+                userRuolo1: 'Employee ',
+                userRuolo2: 'Admin ',
+                Nig: 'Central archive for documents and resources.',
+                wie: 'The Repository is your centralized digital repository. Here you can upload, organize, and access all the documents and resources important to your work. Whether it^s project files, business documents, or reference materials, the Repository gives you a secure and efficient way to manage and share information. Use the search and categorization features to quickly find what you need, and take advantage of version control options to keep your files up to date.',
+                selectRole: 'Select your role',
+                employee: 'Employee',
+                manager: 'Manager',
+                administrator: 'Administrator',
+                enter: 'Enter'
+                }
+            }
+            }
+        }, function(err, t) {
+            jqueryI18next.init(i18next, $);
+            updateContent();
+        });
+
+        function updateContent() {
+        $('body').localize();
+        }
+
+        // Gestione del cambio lingua
+        $('#languageToggle').on('click', function() {
+        const currentLang = i18next.language;
+        const newLang = currentLang === 'it' ? 'en' : 'it';
+        i18next.changeLanguage(newLang, (err, t) => {
+            if (err) return console.log('Errore nel cambio lingua:', err);
+            updateContent();
+        });
         });
     </script>
 </body>

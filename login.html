@@ -6,6 +6,10 @@
     <link rel="icon" href="imgs\sch_logo.png" type="image/x-icon">
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.16/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,21 +17,24 @@
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
         <form id="loginForm" class="login-form">
-            <h2>Login</h2>
+            <h2 data-i18n="login">Login</h2>
             <div class="input-group">
-                <input type="text" id="nomeCognome" placeholder="Inserisci il tuo nome e cognome" required>
+                <input type="text" id="nomeCognome" data-i18n="[placeholder]enterNameSurname" required>
             </div>
             <div class="input-group">
                 <select id="ruolo" required>
-                    <option value="">Seleziona il tuo ruolo</option>
-                    <option value="Dipendente">Dipendente</option>
-                    <option value="Manager">Manager</option>
-                    <option value="Amministratore">Amministratore</option>
+                    <option value="" data-i18n="selectRole">Seleziona il tuo ruolo</option>
+                    <option value="Dipendente" data-i18n="employee">Employee</option>
+                    <option value="Manager" data-i18n="manager">Manager</option>
+                    <option value="Amministratore" data-i18n="administrator">Admin</option>
                 </select>
             </div>
-            <button type="submit">Entra</button>
+            <button id="entra" type="submit" data-i18n="enter">Entra</button>
         </form>
+        <a class="len" id="languageToggle">EN/IT</a>
     </div>
+
+    <script src="lenlogin.js"></script>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {

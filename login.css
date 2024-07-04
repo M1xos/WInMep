@@ -149,3 +149,33 @@ button:hover {
     transform: translate(-50%, -50%);
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+a {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: rgba(108, 52, 131, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Creato Display', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+a {
+    background-color: rgba(91, 44, 111, 0.8);
+}
+
+/* Assicurati che il form di login abbia un margine inferiore */
+.login-form {
+    margin-bottom: 10px;
+}

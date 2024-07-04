@@ -7,6 +7,10 @@
     <link rel="icon" href="imgs\sch_logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard-css.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.16/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 <body class="dark-mode">
     <div class="container">
@@ -22,7 +26,7 @@
                     </div>
                     <div class="profile-info">
                         <h3 id="userNomeCognome"></h3>
-                        <p id="userRuolo"></p>
+                        <p id="userRuolo" data-i18n="userRuolo1" data-i18n="userRuolo2"></p>
                     </div>
                 </div>
             </div>
@@ -35,12 +39,13 @@
                 <a href="projects-page.html" class="menu-item"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
                 <a href="help-page.html" class="menu-item"><i class="fas fa-question-circle"></i> <span>Help</span></a>
             </nav>
+            <a class="len" id="languageToggle">EN/IT</a>
             <button id="toggleSidebar" class="toggle-sidebar"><i class="fas fa-bars"></i></button>
         </aside>
         <main class="main-content">
             <header class="header">
                 <h1>Agenda</h1>
-                <p class="Nig">Gestisci i tuoi impegni e appuntamenti.</p>
+                <p class="Nig" data-i18n="Nig">Gestisci i tuoi impegni e appuntamenti.</p>
                 <div class="header-controls">
                     <div id="modeToggle" class="mode-toggle">
                         <i class="fas fa-sun"></i>
@@ -50,7 +55,7 @@
                 </div>
             </header>
             <div class="content">
-                <p>L'Agenda è uno strumento essenziale per la gestione del tempo e degli impegni. Qui puoi visualizzare, aggiungere e modificare appuntamenti, scadenze e attività importanti. L'interfaccia intuitiva ti permette di organizzare facilmente la tua giornata, settimana o mese, assicurandoti di non perdere mai un impegno importante. Utilizza le diverse viste disponibili per pianificare al meglio il tuo tempo e aumentare la tua produttività.</p>
+                <p data-i18n="wie">L'Agenda è uno strumento essenziale per la gestione del tempo e degli impegni. Qui puoi visualizzare, aggiungere e modificare appuntamenti, scadenze e attività importanti. L'interfaccia intuitiva ti permette di organizzare facilmente la tua giornata, settimana o mese, assicurandoti di non perdere mai un impegno importante. Utilizza le diverse viste disponibili per pianificare al meglio il tuo tempo e aumentare la tua produttività.</p>
             </div>
         </main>
     </div>
@@ -67,6 +72,59 @@
                 window.location.href = 'login.html';
             }
         });
+            // Inizializzazione di i18next
+        i18next
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+            debug: true,
+            fallbackLng: 'it',
+            resources: {
+            it: {
+                translation: {
+                userRuolo1: 'Dipendente',
+                userRuolo2: 'Amministratore',
+                Nig: 'Gestisci i tuoi impegni e appuntamenti.',
+                wie: 'Agenda è uno strumento essenziale per la gestione del tempo e degli impegni. Qui puoi visualizzare, aggiungere e modificare appuntamenti, scadenze e attività importanti. Con un interfaccia intuitiva ti permette di organizzare facilmente la tua giornata, settimana o mese, assicurandoti di non perdere mai un impegno importante. Utilizza le diverse viste disponibili per pianificare al meglio il tuo tempo e aumentare la tua produttività.',
+                selectRole: 'Seleziona il tuo ruolo',
+                employee: 'Dipendente',
+                manager: 'Manager',
+                administrator: 'Amministratore',
+                enter: 'Entra'
+                }
+            },
+            en: {
+                translation: {
+                userRuolo1: 'Employee ',
+                userRuolo2: 'Admin ',
+                Nig: 'Manage your tasks and meetings',
+                wie: 'Agenda is an essential tool for time and commitment management. Here you can view, add and edit important appointments, deadlines and tasks. The intuitive interface allows you to easily organize your day, week or month, ensuring that you never miss an important commitment. Use the different views available to better plan your time and increase your productivity.',
+                selectRole: 'Select your role',
+                employee: 'Employee',
+                manager: 'Manager',
+                administrator: 'Administrator',
+                enter: 'Enter'
+                }
+            }
+            }
+        }, function(err, t) {
+            jqueryI18next.init(i18next, $);
+            updateContent();
+        });
+
+        function updateContent() {
+        $('body').localize();
+        }
+
+        // Gestione del cambio lingua
+        $('#languageToggle').on('click', function() {
+        const currentLang = i18next.language;
+        const newLang = currentLang === 'it' ? 'en' : 'it';
+        i18next.changeLanguage(newLang, (err, t) => {
+            if (err) return console.log('Errore nel cambio lingua:', err);
+            updateContent();
+        });
+        });
+
     </script>
 </body>
 </html>

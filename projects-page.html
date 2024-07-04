@@ -7,6 +7,10 @@
     <link rel="icon" href="imgs\sch_logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard-css.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.16/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 <body class="dark-mode">
     <div class="container">
@@ -22,7 +26,7 @@
                     </div>
                     <div class="profile-info">
                         <h3 id="userNomeCognome"></h3>
-                        <p id="userRuolo"></p>
+                        <p id="userRuolo" data-i18n="userRuolo1" data-i18n="userRuolo2"></p>
                     </div>
                 </div>
             </div>
@@ -36,11 +40,12 @@
                 <a href="help-page.html" class="menu-item"><i class="fas fa-question-circle"></i> <span>Help</span></a>
             </nav>
             <button id="toggleSidebar" class="toggle-sidebar"><i class="fas fa-bars"></i></button>
+            <a class="len" id="languageToggle">EN/IT</a>
         </aside>
         <main class="main-content">
             <header class="header">
                 <h1>Projects</h1>
-                <p class="Nig">Gestione e monitoraggio dei progetti.</p>
+                <p class="Nig" data-i18n="Nig" >Gestione e monitoraggio dei progetti.</p>
                 <div class="header-controls">
                     <div id="modeToggle" class="mode-toggle">
                         <i class="fas fa-sun"></i>
@@ -50,7 +55,7 @@
                 </div>
             </header>
             <div class="content">
-                <p>La sezione Projects è il cuore della gestione dei tuoi progetti. Qui puoi creare, monitorare e gestire tutti i tuoi progetti in corso. Puoi facilmente visualizzare lo stato di avanzamento di ogni progetto. Assegna compiti, stabilisci scadenze, e collabora con il tuo team in tempo reale. La pagina Projects ti offre una visione d'insieme, permettendoti di prendere decisioni informate e di mantenere tutti i progetti sulla giusta rotta.</p>
+                <p data-i18n="wie">La sezione Projects è il cuore della gestione dei tuoi progetti. Qui puoi creare, monitorare e gestire tutti i tuoi progetti in corso. Puoi facilmente visualizzare lo stato di avanzamento di ogni progetto. Assegna compiti, stabilisci scadenze, e collabora con il tuo team in tempo reale. La pagina Projects ti offre una visione d'insieme, permettendoti di prendere decisioni informate e di mantenere tutti i progetti sulla giusta rotta.</p>
             </div>
         </main>
     </div>
@@ -66,6 +71,58 @@
             } else {
                 window.location.href = 'login.html';
             }
+        });
+              // Inizializzazione di i18next
+              i18next
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+            debug: true,
+            fallbackLng: 'it',
+            resources: {
+            it: {
+                translation: {
+                userRuolo1: 'Dipendente',
+                userRuolo2: 'Amministratore',
+                Nig: 'Gestione e monitoraggio dei progetti.',
+                wie: 'La sezione Projects è il cuore della gestione dei tuoi progetti. Qui puoi creare, monitorare e gestire tutti i tuoi progetti in corso. Puoi facilmente visualizzare lo stato di avanzamento di ogni progetto. Assegna compiti, stabilisci scadenze, e collabora con il tuo team in tempo reale. La pagina Projects ti offre una visione d^insieme, permettendoti di prendere decisioni informate e di mantenere tutti i progetti sulla giusta rotta.',
+                selectRole: 'Seleziona il tuo ruolo',
+                employee: 'Dipendente',
+                manager: 'Manager',
+                administrator: 'Amministratore',
+                enter: 'Entra'
+                }
+            },
+            en: {
+                translation: {
+                userRuolo1: 'Employee ',
+                userRuolo2: 'Admin ',
+                Nig: 'Project management and monitoring.',
+                wie: 'The Projects section is the heart of your project management. Here you can create, track and manage all your ongoing projects. You can easily view the progress of each project. Assign tasks, set deadlines, and collaborate with your team in real time. The Projects page gives you an overview, allowing you to make informed decisions and keep all projects on track.',
+                selectRole: 'Select your role',
+                employee: 'Employee',
+                manager: 'Manager',
+                administrator: 'Administrator',
+                enter: 'Enter'
+                }
+            }
+            }
+        }, function(err, t) {
+            jqueryI18next.init(i18next, $);
+            updateContent();
+        });
+
+        function updateContent() {
+        $('body').localize();
+        }
+
+        // Gestione del cambio lingua
+        $('#languageToggle').on('click', function() {
+        const currentLang = i18next.language;
+        const newLang = currentLang === 'it' ? 'en' : 'it';
+        i18next.changeLanguage(newLang, (err, t) => {
+            if (err) return console.log('Errore nel cambio lingua:', err);
+            updateContent();
+        });
         });
     </script>
 </body>

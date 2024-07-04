@@ -8,6 +8,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard-css.css">
     <link rel="stylesheet" href="employee-details-css.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.16/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 <body class="dark-mode">
     <div class="container">
@@ -23,7 +27,7 @@
                         </div>
                         <div class="profile-info">
                             <h3 id="userNomeCognome"></h3>
-                            <p id="userRumjkolo"></p>
+                            <p id="userRuolo"></p>
                         </div>
                     </div>
                 </div>
@@ -36,6 +40,7 @@
                 <a href="projects.html" class="menu-item"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
                 <a href="help.html" class="menu-item"><i class="fas fa-question-circle"></i> <span>Help</span></a>
                 </nav>
+                <a class="len" id="languageToggle">EN/IT</a>
                 <button id="toggleSidebar" class="toggle-sidebar"><i class="fas fa-bars"></i></button>
             </aside>
         <main class="main-content">
@@ -44,7 +49,7 @@
                     <img id="employeeImage" src="/api/placeholder/100/100" alt="Employee" class="employee-image">
                     <h1 id="employeeName">Employee Name</h1>
                 </div>
-                <p class="igN">Dettagli del dipendente.</p>
+                <p data-i18n="igN"class="igN">Dettagli del dipendente.</p>
                 <div class="header-controls">
                     <div id="modeToggle" class="mode-toggle">
                         <i class="fas fa-sun"></i>
@@ -97,5 +102,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="employee-details-js.js"></script>
     <script src="unit-script.js"></script>
+    <script src="lenemp.js"></script>
 </body>
 </html>
